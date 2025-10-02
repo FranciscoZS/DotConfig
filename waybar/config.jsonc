@@ -1,0 +1,134 @@
+{
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  /* === Modules Order === */
+  "modules-right": [
+    /*"custom/archicon",*/
+    "cpu",
+    "memory",
+    "disk",
+    "pulseaudio",
+    "network",
+    "temperature"
+  ],
+  "modules-center": [
+   "clock"
+  ],
+  "modules-left": [
+    "hyprland/workspaces",
+    "wlr/taskbar"
+  ],
+  /* === Modules Left === */
+  "custom/archicon": {
+    "format": "󰌽",
+    "on-click": "wofi --show drun -n",
+    "tooltip": false
+  },
+  "clock": {
+    "interval": 60,
+    "timezone": "America/Mexico_City",
+    "format": "{:%I:%M %p %a, %d/%b/%y}",
+    "tooltip-format": "\n<span size='12pt' font='FiraCode Nerd Font'>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+                          "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b>{}</b></span>"
+                              }
+    }
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "{usage}% 󰻠",
+    "tooltip": true,
+    "tooltip-format": "Uso de CPU: {usage}%\nNúcleos: {cores}"
+  },
+  "memory": {
+    "format": "{used} GB 󰍛",
+    "tooltip": true,
+    "tooltip-format": "RAM en uso: {used} / {total} ({percentage}%)"
+  },
+  "disk": {
+    "format": "{percentage_used}% ",
+    "tooltip": true,
+    "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
+  },
+  "temperature": {
+    "format": "{temperatureC}°C {icon}",
+    "tooltip": true,
+    "tooltip-format": "Temperatura actual: {temperatureC}°C\nCrítico si > 80°C",
+    "format-icons": [
+      ""
+    ]
+  },
+  /* === Modules Center === */
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": ""
+    },
+    "persistent-workspaces": {
+      "*": 2
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true
+  },
+  /* === Modules Right === */
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "active-first": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "rofi"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "pulseaudio_slider": {
+    "format": "{volume}%",
+    "tooltip": false,
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    }
+  },
+  "network": {
+    "format": "{essid}  ",
+    "format-ethernet": "{ifname} 󰈀",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+  "hyprland/language": {
+    "format": "{} ",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+    "format-es": "ESP",
+    "format-en": "ENG"
+  }
+}
