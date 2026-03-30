@@ -11,7 +11,7 @@
 
 * {
     all:unset;
-    font-family: 'CodeNewRoman Nerd Font Mono', monospace;
+    font-family: 'FiraCode Nerd Font Mono', monospace;
     font-size: 18px;
     outline: none;
     border: none;
@@ -101,3 +101,4 @@ window {
 #entry:drop(active) {
     background-color: @lavender !important;
 }
+
